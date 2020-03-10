@@ -45,7 +45,7 @@ pipeline {
              }
              steps {
                  sh "docker rm cont01 -f"
-                 sh "docker image rmi vishwacloudlab/tomcat-b15 –f"
+                 sh "docker image rmi siddhanthhn/tomcat-b15 –f"
                                  sh “mvn clean"
              }
           }
