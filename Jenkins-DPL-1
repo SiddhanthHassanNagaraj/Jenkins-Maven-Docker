@@ -41,12 +41,12 @@ pipeline {
          }
          stage ("Cleanup the previous Docker Image and Container") {
              input {
-                    message 'Can we Delete the Docker image and Container'
+                     message 'Can we Delete the Docker image and Container'
              }
              steps {
                  sh "docker rm cont01 -f"
                  sh "docker image rmi siddhanthhn/tomcat-b01 –f"
-                 sh “mvn clean"
+                                 sh “mvn clean"
              }
           }
     }
