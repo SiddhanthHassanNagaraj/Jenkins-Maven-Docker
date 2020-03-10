@@ -20,12 +20,12 @@ pipeline {
          }
          stage ("Build the Docker Image") {
              steps {
-                 sh "docker build . -t siddhanthhn/tomcat"
+                 sh "docker build . -t siddhanthhn/tomcat-b15"
              }
          }
          stage ("Run the Container") {
              steps {
-                 sh "docker run -d -p 90:8080 --name cont01 siddhanthhn/tomcat"
+                 sh "docker run -d -p 90:8080 --name cont01 siddhanthhn/tomcat-b15"
              }
          }
          stage ("check the webpage") {
@@ -36,7 +36,7 @@ pipeline {
          }
          stage ("Push to docker HUB") {
              steps {
-                 sh "docker push siddhanthhn/tomcat:latest"
+                 sh "docker push siddhanthhn/tomcat-b15:latest"
              }
          }
          stage ("Cleanup the previous Docker Image and Container") {
@@ -45,7 +45,7 @@ pipeline {
              }
              steps {
                  sh "docker rm cont01 -f"
-                 sh "docker image rmi siddhanthhn/tomcat –f"
+                 sh "docker image rmi siddhanthhn/tomcat-b15 –f"
                  sh "mvn clean"
              }
          }
