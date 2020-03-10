@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'java' }
     stages {
-        stage {"SCM Checkin-1"} {
+        stage ("SCM Checkin-1") {
             steps {
               git branch: 'master', url: 'https://github.com/SiddhanthHassanNagaraj/SampleMaven'
             }
