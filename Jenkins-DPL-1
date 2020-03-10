@@ -48,6 +48,6 @@ pipeline {
                  sh "docker image rmi siddhanthhn/tomcat-b01 –f"
                                  sh “mvn clean"
              }
-          }
+         }
     }
 }
