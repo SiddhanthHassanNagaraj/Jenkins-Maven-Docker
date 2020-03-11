@@ -45,7 +45,6 @@ pipeline {
              }
              steps {
                  sh "sudo docker rm cont01 -f"
-                 sh "mvn clean"
              }
          }
     }
