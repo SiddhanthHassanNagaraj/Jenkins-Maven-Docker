@@ -45,8 +45,8 @@ pipeline {
              }
              steps {
                  sh "sudo docker rm cont01 -f"
-                 sh "sudo docker image rmi siddhanthhn/tomcat-b15:latest –f"
-                 sh "mvn clean"
+                 ## sh "sudo docker image rmi siddhanthhn/tomcat-b15:latest –f"
+                 ## sh "mvn clean"
              }
          }
     }
