@@ -44,8 +44,8 @@ pipeline {
                      message 'Can we Delete the Docker image and Container'
              }
              steps {
-                 sh "sudo docker rm cont01 -f"
-                 sh "sudo docker image rmi siddhanthhn/tomcat-b15:latest –f"
+                 sh "sudo docker rm cont01 -f",
+                 sh "sudo docker image rmi siddhanthhn/tomcat-b15:latest –f",
                  sh "mvn clean"
              }
          }
