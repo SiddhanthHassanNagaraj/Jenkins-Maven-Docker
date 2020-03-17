@@ -25,13 +25,13 @@ pipeline {
          }
          stage ("Run the Container") {
              steps {
-                 sh "sudo docker run -d -p 90:8080 --name cont02 siddhanthhn/tomcat-b1"
+                 sh "sudo docker run -d -p 91:8080 --name cont02 siddhanthhn/tomcat-b1"
              }
          }
          stage ("check the webpage") {
              steps {
                  sh "sleep 15"
-                 sh "curl http://3.21.162.155:90"
+                 sh "curl http://3.21.162.155:91"
              }
          }
          stage ("Push to docker HUB") {
