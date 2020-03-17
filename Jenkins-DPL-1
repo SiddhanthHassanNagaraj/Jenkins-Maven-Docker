@@ -20,23 +20,23 @@ pipeline {
          }
          stage ("Build the Docker Image") {
              steps {
-                 sh "sudo docker build . -t siddhanthhn/tomcat-b15"
+                 sh "sudo docker build . -t siddhanthhn/tomcat-b1"
              }
          }
          stage ("Run the Container") {
              steps {
-                 sh "sudo docker run -d -p 90:8080 --name cont01 siddhanthhn/tomcat-b15"
+                 sh "sudo docker run -d -p 90:8080 --name cont02 siddhanthhn/tomcat-b1"
              }
          }
          stage ("check the webpage") {
              steps {
                  sh "sleep 15"
-                 sh "curl http://18.217.70.156:90"
+                 sh "curl http://3.21.162.155:90"
              }
          }
          stage ("Push to docker HUB") {
              steps {
-                 sh "sudo docker push siddhanthhn/tomcat-b15:latest"
+                 sh "sudo docker push siddhanthhn/tomcat-b1:latest"
              }
          }
          stage ("Cleanup the previous Docker Image and Container") {
@@ -44,8 +44,8 @@ pipeline {
                      message 'Can we Delete the Docker image and Container'
              }
              steps {
-                 sh "sudo docker rm cont01 -f"
-                 sh "sudo docker image rmi siddhanthhn/tomcat-b15"
+                 sh "sudo docker rm cont02 -f"
+                 sh "sudo docker image rmi siddhanthhn/tomcat-b1"
              }
          }
     }
